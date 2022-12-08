@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEB - main page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1><a href="index.html">WEB</a></h1>
+    <input class="bgcolor_btn" type="button" value="night" onclick="
+    var target = document.querySelector('body');
+    if(this.value === 'night') { //야간모드
+        target.style.backgroundColor = 'black';
+        target.style.color = 'white';
+        document.querySelector('.bgcolor_btn').value = 'day'; /*value 값 변경*/
+        
+        // 모든 링크 색상 밝게 변경
+        var alist = document.querySelectorAll('a');
+        var i = 0;
+        while(i < alist.length) {
+            alist[i].style.color = 'powderblue';
+            i++;
+        }
+    } else { //주간모드
+        target.style.backgroundColor = 'white';
+        target.style.color = 'black';
+        document.querySelector('.bgcolor_btn').value = 'night';
+
+        // 모든 링크 색상 어둡게 변경
+        var alist = document.querySelectorAll('a');
+        var i = 0;
+        while(i < alist.length) {
+            alist[i].style.color = 'navy';
+            i++;
+        }
+    }
+    ">
+    <ol> 
+        <li><a href="#">HTML</a></li>
+        <li><a href="#">CSS</a></li>
+        <li><a href="#">JavaScript</a></li>
+    </ol>
+</body>
+</html>
